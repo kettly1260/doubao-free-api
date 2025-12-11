@@ -1,40 +1,20 @@
-# --- Builder Stage ---
+# 构建阶段
 FROM node:18-alpine AS builder
-
 WORKDIR /app
-
-# 复制 package.json 和 lock 文件
-COPY package.json yarn.lock ./
-
-# 安装全部依赖（包括 devDependencies）
-RUN yarn install
-
-# 复制项目
+COPY package*.json ./
+RUN npm install
 COPY . .
+RUN npm run build
 
-# 编译项目
-RUN yarn build
-
-# --- Runtime Stage ---
+# 运行阶段
 FROM node:18-alpine
-
 WORKDIR /app
-
-# 复制 package.json 和 lock 文件
-COPY package.json yarn.lock ./
-
-# 安装生产依赖
-RUN yarn install --production
-
-# 复制构建产物
 COPY --from=builder /app/dist ./dist
-COPY --from=builder /app/public ./public
+COPY --from=builder /app/package*.json ./
+# 仅安装生产依赖
+RUN npm install --omit=dev
+# 设置时区（可选，方便查看日志）
+ENV TZ=Asia/Shanghai
 
-# 明确暴露应用监听端口
 EXPOSE 8000
-
-ENV NODE_ENV=production
-ENV PORT=8000
-
-# 启动命令
 CMD ["node", "dist/index.js"]
