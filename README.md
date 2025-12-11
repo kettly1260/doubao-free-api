@@ -1,24 +1,5 @@
 # 豆包 Free API - 增强版
 
-[![](https://img.shields.io/github/license/1994qrq/2025doubao-free-api.svg)](LICENSE)
-![](https://img.shields.io/github/stars/1994qrq/2025doubao-free-api.svg)
-![](https://img.shields.io/github/forks/1994qrq/2025doubao-free-api.svg)
-
----
-
-## 🎁 推荐服务器
-
-**部署本项目推荐使用阿里云服务器**
-
-🔥 **限时优惠**：200M 带宽 + 不限速 + 不限流量，仅需 **79元/年**！
-
-👉 [**点击购买阿里云服务器（专属优惠链接）**](https://www.aliyun.com/minisite/goods?userCode=d3mvo2j1)
-
-- ✅ 200M 超大带宽
-- ✅ 不限速、不限流量
-- ✅ 稳定可靠，适合部署各类应用
-- ✅ 新用户专享优惠价
-
 ---
 
 🚀 **增强版特性**：在原版基础上修复问题并新增**图文对话**功能！
