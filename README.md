@@ -123,7 +123,7 @@ pm2 reload doubao-free-api
 pm2 stop doubao-free-api
 ```
 
-服务默认运行在 `http://localhost:8000`
+服务默认运行在 `http://localhost:5566`
 
 ---
 
@@ -328,7 +328,7 @@ Content-Type: application/json
 ```bash
 # 设置环境变量
 export SESSION_ID="your_session_id_here"
-export API_BASE="http://127.0.0.1:8000"
+export API_BASE="http://127.0.0.1:5566"
 export IMAGE_URL="https://example.com/your-image.jpg"
 
 # 运行测试
